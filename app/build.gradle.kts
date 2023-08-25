@@ -49,8 +49,8 @@ dependencies {
     implementation("androidx.fragment:fragment-ktx:1.6.1")
 
     //Hilt
-    implementation("com.google.dagger:hilt-android:2.46")
-    kapt("com.google.dagger:hilt-compiler:2.46")
+    implementation("com.google.dagger:hilt-android:2.47")
+    kapt("com.google.dagger:hilt-compiler:2.47")
 
     //Room
     implementation("androidx.room:room-runtime:2.5.2")

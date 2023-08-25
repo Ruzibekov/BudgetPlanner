@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_enabled="true" android:drawable="@drawable/rounded_blue_card_r8"/>
+    <item android:state_enabled="false" android:drawable="@drawable/rounded_blue_card_disabled_r8"/>
+</selector>

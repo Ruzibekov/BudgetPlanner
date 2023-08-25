@@ -6,7 +6,6 @@ import uz.ruzibekov.budgetplanner.data.local.shared_pref.PreferenceHelper.set
 
 class LocalManager(
     private val preferences: SharedPreferences,
-    private val gson: Gson,
 ) {
 
     var amount: Long = 0

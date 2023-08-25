@@ -1,4 +1,4 @@
-package com.example.walletmanager.ui.base
+package uz.ruzibekov.budgetplanner.ui.base
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.AndroidEntryPoint

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/layoutStyle"
+    tools:context=".ui.screens.transaction.edit.EditTransactionActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/toolbarStyle"
+        app:menu="@menu/menu_save"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@string/expense" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:tabIndicatorColor="@color/blue"
+        app:tabInlineLabel="true"
+        app:tabIndicatorHeight="50dp"
+        app:tabIndicatorGravity="center"
+        app:tabIndicatorFullWidth="true"
+        app:tabBackground="@color/white"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextAppearance="@style/TextAppearance.AppCompat.Small"
+        app:tabTextColor="@color/black">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_income"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/income" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_expense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/expense" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                style="@style/textStyle.700"
+                android:layout_marginTop="20dp"
+                android:text="@string/title_amount" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_currency_code"
+                    style="@style/textStyle.500"
+                    android:paddingTop="10dp"
+                    android:textSize="18sp"
+                    tools:text="USD" />
+
+                <EditText
+                    android:id="@+id/et_amount"
+                    style="@style/textStyle.500"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:autofillHints="no"
+                    android:background="@android:color/transparent"
+                    android:inputType="number"
+                    android:paddingVertical="10dp"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                style="@style/textStyle.700"
+                android:layout_marginTop="20dp"
+                android:text="@string/title_description" />
+
+            <EditText
+                android:id="@+id/et_description"
+                style="@style/textStyle.500"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="no"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@color/black"
+                android:hint="@string/hint_description"
+                android:inputType="text"
+                android:paddingVertical="10dp"
+                android:textSize="14sp" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
