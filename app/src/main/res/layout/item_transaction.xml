@@ -29,7 +29,7 @@
 
 
     <TextView
-        android:id="@+id/tv_amount_type"
+        android:id="@+id/tv_name"
         style="@style/textStyle.700"
         android:layout_centerVertical="true"
         android:layout_marginStart="10dp"

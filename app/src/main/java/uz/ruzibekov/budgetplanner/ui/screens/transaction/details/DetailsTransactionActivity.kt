@@ -10,7 +10,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
 import androidx.lifecycle.lifecycleScope
-import uz.ruzibekov.budgetplanner.ui.screens.transaction.edit.EditTransactionActivity
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
@@ -18,6 +17,7 @@ import kotlinx.coroutines.flow.onEach
 import uz.ruzibekov.budgetplanner.R
 import uz.ruzibekov.budgetplanner.data.local.entity.transaction.TransactionEntity
 import uz.ruzibekov.budgetplanner.ui.base.BaseActivity
+import uz.ruzibekov.budgetplanner.ui.screens.transaction.edit.EditTransactionActivity
 import uz.ruzibekov.budgetplanner.ui.screens.transaction.toTransactionTypeByAmount
 import uz.ruzibekov.budgetplanner.utils.DateFactory
 import uz.ruzibekov.budgetplanner.utils.TextFormatter
@@ -126,14 +126,11 @@ class DetailsTransactionActivity : BaseActivity() {
                 val formattedAmount = TextFormatter.spaceBetween3Numbers(transaction.amount)
                 val date = DateFactory.getFormattedDate(transaction.date)
 
-//                cvIconBack?.setCardBackgroundColor(category.colorId.toCategoryColor().color)
-//
-//                ivIcon?.setImageResource(category.iconId.toCategoryIcon().iconRes)
-//
                 tvAmount?.setTextColor(transactionType.color)
-                tvAmount?.text = transaction.amount.toString()
+                tvAmount?.text = formattedAmount
 
                 tvDate?.text = date
+                tvDescription?.text = transaction.description
             }
         }.launchIn(lifecycleScope)
     }

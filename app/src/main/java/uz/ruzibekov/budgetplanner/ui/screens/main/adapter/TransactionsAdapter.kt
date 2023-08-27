@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
@@ -46,12 +47,15 @@ class TransactionsAdapter : RecyclerView.Adapter<TransactionsAdapter.ViewHolder>
         private var tvAmountType: TextView? = null
         private var tvAmount: TextView? = null
         private var cvIcon: CardView? = null
+        private var ivIcon: ImageView? = null
+        private var tvName: TextView? = null
 
         init {
             tvDate = itemView.findViewById(R.id.tv_date)
-            tvAmountType = itemView.findViewById(R.id.tv_amount_type)
             tvAmount = itemView.findViewById(R.id.tv_amount)
             cvIcon = itemView.findViewById(R.id.cv_icon)
+            ivIcon = itemView.findViewById(R.id.iv_icon)
+            tvName = itemView.findViewById(R.id.tv_name)
         }
 
         @SuppressLint("SetTextI18n")
@@ -61,17 +65,20 @@ class TransactionsAdapter : RecyclerView.Adapter<TransactionsAdapter.ViewHolder>
                 data.amount > 0 -> {
                     tvAmount?.setTextColor(Color.BLUE)
                     tvAmount?.text = TextFormatter.spaceBetween3Numbers(data.amount)
+                    ivIcon?.setImageResource(R.drawable.ic_income)
+                    cvIcon?.setCardBackgroundColor(Color.BLUE)
+                    tvName?.text = itemView.context.getString(R.string.income)
                 }
 
                 data.amount < 0 -> {
                     tvAmount?.setTextColor(Color.RED)
                     tvAmount?.text = TextFormatter.spaceBetween3Numbers(data.amount)
+                    ivIcon?.setImageResource(R.drawable.ic_expense)
+                    cvIcon?.setCardBackgroundColor(Color.RED)
+                    tvName?.text = itemView.context.getString(R.string.expense)
                 }
             }
 
-//            ivCategory?.setImageResource(data.category.iconId.toCategoryIcon().iconRes)
-//            cvIconBack?.setCardBackgroundColor(data.category.colorId.toCategoryColor().color)
-//            tvName?.text = data.category.name
             tvDate?.text = DateFactory.getFormattedDate(data.date)
 
             itemView.setOnClickListener { onClick() }
